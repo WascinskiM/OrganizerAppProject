@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dateBarLayout"
+        android:layout_width="435dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/dateTextView"
+            android:layout_width="214dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="96dp"
+            android:layout_marginLeft="96dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="1 Listopada 2020"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/previousDay"
+            android:layout_width="54dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_media_rew" />
+
+        <ImageButton
+            android:id="@+id/nextDay"
+            android:layout_width="56dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="68dp"
+            android:layout_marginRight="68dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_media_ff" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/addCardButton"
+        android:layout_width="137dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="532dp"
+        android:background="@drawable/my_btn_bg"
+        android:text="Dodaj Aktywność"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/addNotesButton"
+        android:layout_width="137dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="248dp"
+        android:layout_marginLeft="248dp"
+        android:layout_marginTop="532dp"
+        android:background="@drawable/my_btn_bg"
+        android:text="Dodaj Notatke"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:layout_width="411dp"
+        android:layout_height="318dp"
+        android:layout_marginTop="101dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".List">
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="317dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="1dp">
+
+        </ListView>
+
+    </RelativeLayout>
+
+    <!--    <ScrollView-->
+    <!--        android:layout_width="409dp"-->
+    <!--        android:layout_height="314dp"-->
+    <!--        android:layout_marginStart="1dp"-->
+    <!--        android:layout_marginLeft="1dp"-->
+    <!--        android:layout_marginTop="101dp"-->
+    <!--        android:background="@color/colorPrimaryDark"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--        <LinearLayout-->
+    <!--            android:id="@+id/cardsLayout"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="vertical" />-->
+    <!--    </ScrollView>-->
+</androidx.constraintlayout.widget.ConstraintLayout>

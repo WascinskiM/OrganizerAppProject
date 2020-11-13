@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AddCardsActivity">
+
+    <TextView
+        android:id="@+id/textTextView"
+        android:layout_width="402dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="292dp"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:text="Opis Aktywności"
+        android:textColor="@color/cardview_light_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/startAtTextView2"
+        android:layout_width="402dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Godzina Rozpoczęcia"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/cardview_light_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/endAtTextView"
+        android:layout_width="409dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="152dp"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:text="Godzina zakończenia"
+        android:textColor="@color/cardview_light_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/insertStartAt"
+        android:layout_width="409dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="80dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Godzina rozpoczęcia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/insertEndAt"
+        android:layout_width="409dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="212dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Godzina zakończenia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/insertText"
+        android:layout_width="402dp"
+        android:layout_height="119dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="368dp"
+        android:ems="10"
+        android:gravity="top"
+        android:inputType="textPersonName"
+        android:hint="Wprowadź treść aktywności"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/dismisButton"
+        android:layout_width="142dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="532dp"
+        android:background="@drawable/my_btn_dismis"
+        android:text="Odrzuć zmiany"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/acceptButton"
+        android:layout_width="142dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="532dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:shadowColor="#FFFFFF"
+        android:singleLine="false"
+        android:background="@drawable/my_btn_bg"
+        android:text="Dodaj aktywność"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
