@@ -1,7 +1,6 @@
 package com.example.organizerapp.data.map;
 
-import com.example.organizerapp.data.cards.ActivityDataClass;
-import com.example.organizerapp.data.cards.ActivityRepository;
+
 import com.example.organizerapp.model.Card;
 
 import java.util.HashSet;

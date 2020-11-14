@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayAdapter<String> adapter;
     private Date date = new Date();
     private TextView dateTextView;
-    private String createDate;
+    private String cardCreateDate;
     private String actualDay;
     private Context context;
     private int dayCounter;
@@ -45,20 +45,25 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
         context = getApplicationContext();
-        actualDay = dateService.getFormatedDate();
+        actualDay = dateService.getFormatedDate(dateService.getDate());
+
         System.out.println("Day " + actualDay);
-        dateTextView = (TextView) findViewById(R.id.dateTextView);
+        dateTextView = findViewById(R.id.dateTextView);
 
         //
         Button addCardsButton = findViewById(R.id.addCardButton);
-        Button addNotesButton = findViewById(R.id.addNotesButton);
         ImageButton previousDayButton = findViewById(R.id.previousDay);
         ImageButton nextDayButton = findViewById(R.id.nextDay);
 
 
         //Wczytanie listy aktyności
         String dayOfWeek = dateService.getDayOfWeek(dateService.getDate());
-        dateTextView.setText(dayOfWeek + " " + dateService.getFormatedDate());
+        dateTextView.setText(dayOfWeek + " " + dateService.getFormatedDate(dateService.getDate()));
+
+
+
+            loadActivities();
+
 
         createCardByBundle(getIntent().getExtras());
         loadActivities();
@@ -66,14 +71,8 @@ public class MainActivity extends AppCompatActivity {
 
         //BUTTONS
 
-        //Dodawanie notatki
-        addNotesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, AddNotesActivity.class);
-                startActivity(intent);
-            }
-        });
+
+
         //Dodawanie aktywności w ciagu dnia
         addCardsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,12 +90,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 System.out.println("Day " + actualDay);
                 dayCounter--;
-                String prDate = dateService.getDayOfWeek(LocalDate.now().plusDays(dayCounter));
-                dateTextView.setText(prDate + " " + dateService.getFormatedAnotherDate(date, dayCounter));
-                actualDay = dateService.getFormatedAnotherDate(date, dayCounter);
+                String prDate = dateService.getDayOfWeek(dateService.getAnotherDate(date, dayCounter));
+                Date anotherDate = dateService.getAnotherDate(date, dayCounter);
+                System.out.println("GetAnotherDate: " + dateService.getAnotherDate(date, dayCounter));
+                dateTextView.setText(prDate + " " +  dateService.getFormatedDate(dateService.getAnotherDate(date, dayCounter)));
+                actualDay = dateService.getFormatedDate(dateService.getAnotherDate(date, dayCounter));
                 Toast.makeText(context, actualDay, Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(context, MainActivity.class);
-                intent.putExtra("data", dateService.getFormatedAnotherDate(date, dayCounter));
                 loadActivities();
             }
         });
@@ -107,11 +106,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 System.out.println("Day " + actualDay);
                 dayCounter++;
-                String prDate = dateService.getDayOfWeek(LocalDate.now().plusDays(dayCounter));
-                actualDay = dateService.getFormatedAnotherDate(date, dayCounter);
-                dateTextView.setText(prDate + " " + dateService.getFormatedAnotherDate(date, dayCounter));
+                String prDate = dateService.getDayOfWeek(dateService.getAnotherDate(date, dayCounter));
+                dateTextView.setText(prDate + " " +  dateService.getFormatedDate(dateService.getAnotherDate(date, dayCounter)));
+                actualDay = dateService.getFormatedDate(dateService.getAnotherDate(date, dayCounter));
                 Toast.makeText(context, actualDay, Toast.LENGTH_SHORT).show();
                 loadActivities();
+
             }
         });
 
@@ -137,9 +137,8 @@ public class MainActivity extends AppCompatActivity {
     private void createCardByBundle(Bundle bundle) {
         if (bundle != null) {
             Card card = new Card(bundle.getString("startAt") + "-", bundle.getString("endAt"), bundle.getString("text"));
-            createDate = bundle.getString("createDate");
-            mapRepository.add(createDate, card);
-            loadActivities();
+            cardCreateDate = bundle.getString("createDate");
+            mapRepository.add(cardCreateDate, card);
         }
     }
 

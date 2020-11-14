@@ -22,6 +22,7 @@ Context context;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_cards);
         context = getApplicationContext();
+
         final TextView startAtText = findViewById(R.id.insertStartAt);
         final TextView endAtText = findViewById(R.id.insertEndAt);
         final TextView text = findViewById(R.id.insertText);

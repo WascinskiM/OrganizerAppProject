@@ -59,23 +59,11 @@
         android:id="@+id/addCardButton"
         android:layout_width="137dp"
         android:layout_height="66dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="532dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginLeft="136dp"
+        android:layout_marginTop="528dp"
         android:background="@drawable/my_btn_bg"
         android:text="Dodaj Aktywność"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/addNotesButton"
-        android:layout_width="137dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="248dp"
-        android:layout_marginLeft="248dp"
-        android:layout_marginTop="532dp"
-        android:background="@drawable/my_btn_bg"
-        android:text="Dodaj Notatke"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
